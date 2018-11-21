@@ -1,4 +1,8 @@
 <archimate:ApplicationInterface
     xmlns:archimate="http://www.archimatetool.com/archimate"
     name="registration GUI"
-    id="d8820cf2-1bf3-4ac4-a168-78f3942d276a"/>
+    id="d8820cf2-1bf3-4ac4-a168-78f3942d276a">
+  <properties
+      key="url"
+      value="https://registrering.fellesdatakatalog.brreg.no"/>
+</archimate:ApplicationInterface>
