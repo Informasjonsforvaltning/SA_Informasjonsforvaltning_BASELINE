@@ -2,4 +2,5 @@
     xmlns:archimate="http://www.archimatetool.com/archimate"
     name="SegmentArchitecture_Informasjonsforvaltning - NÅSITUASJON"
     id="ccce616f-9bd9-4e17-86e8-25514b07678c"
+    purpose="Beskriver baseline-arkitekturen (nåsituasjon) i Informasjonsforvaltningsdomenet."
     version="4.0.1"/>

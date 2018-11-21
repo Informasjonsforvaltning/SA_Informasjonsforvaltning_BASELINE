@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>SegmentArchitecture_Informasjonsforvaltning - NÅSITUASJON</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+		<div class="panel-heading root-panel-heading">
+			<b>SegmentArchitecture_Informasjonsforvaltning - N&#197;SITUASJON</b>
+		</div>
+		<div class="panel-body root-panel-body">
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+					<li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+						<li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab" class="i18n-query"></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none">Beskriver baseline-arkitekturen (n&#229;situasjon) i Informasjonsforvaltningsdomenet.</textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="query">
+						<br>
+						<style>
+						#myprompt {
+						    width: 80%;
+						    font-family: Consolas,Monaco, monospace;
+						}
+						</style>
+
+						<div id='myconsole'></div>
+
+						<p>
+							<tt><span id="useid">alasql</span> &gt;</tt> <input id='myprompt' autofocus/> 
+						</p>
+
+						<script src='../../lib/alasql/alasql.min.js'></script>
+
+						<script>
+							function decodeURL(s) {
+								return decodeURIComponent(s.replace(/\+/g, "%20"));
+							}
+
+							var first = decodeURI(location.search.substr(1));
+						 	alasql.options.logtarget = 'myconsole';
+							alasql.prompt('myprompt','useid');
+							alasql.prompt('myprompt','useid', first);
+
+							var dataElements = [ ];	  
+						  	var dataProperties = [ ];
+						 	var dataRelations = [ ];
+
+										dataElements.push({id:"f3749090-2fa0-461b-bf84-4943ba2ff334", type:"ApplicationComponent", name:decodeURL("api-cat"), description:decodeURL("")});
+										dataElements.push({id:"43aa450e-0394-41e5-bc7c-ca4d3141350e", type:"ApplicationComponent", name:decodeURL("concept-cat"), description:decodeURL("")});
+										dataElements.push({id:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811", type:"ApplicationInterface", name:decodeURL("api-cat+API"), description:decodeURL("")});
+													dataProperties.push({id:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811", key:decodeURL("openAPI"), value:decodeURL("https%3A%2F%2Fraw.githubusercontent.com%2Fbrreg%2FopenAPI%2Fmaster%2Fspecs%2Fapi-cat.yaml")});
+
+										dataElements.push({id:"8e0d843f-826f-4f08-be73-da0638bba50e", type:"ApplicationInterface", name:decodeURL("concept-cat+API"), description:decodeURL("")});
+													dataProperties.push({id:"8e0d843f-826f-4f08-be73-da0638bba50e", key:decodeURL("url"), value:decodeURL("https%3A%2F%2Ffellesdatakatalog.brreg.no%2Fapi%2Fconcepts")});
+													dataProperties.push({id:"8e0d843f-826f-4f08-be73-da0638bba50e", key:decodeURL("openAPI"), value:decodeURL("https%3A%2F%2Fraw.githubusercontent.com%2Fbrreg%2FopenAPI%2Fmaster%2Fspecs%2Fbegrep-cat.yaml")});
+
+										dataElements.push({id:"f2a2ff35-a9cd-4801-b2af-a2de3eb17bf1", type:"ApplicationComponent", name:decodeURL("harvester-api"), description:decodeURL("")});
+										dataElements.push({id:"5253b596-e75f-454b-9925-cafa72ea6547", type:"ApplicationInterface", name:decodeURL("harvester-api+API"), description:decodeURL("")});
+										dataElements.push({id:"53543756-bc48-40d4-91df-37c697878806", type:"ApplicationComponent", name:decodeURL("search-api"), description:decodeURL("")});
+										dataElements.push({id:"d9d362b3-1ae1-4179-b02b-f1e039fb7a85", type:"ApplicationInterface", name:decodeURL("search-api+API"), description:decodeURL("")});
+													dataProperties.push({id:"d9d362b3-1ae1-4179-b02b-f1e039fb7a85", key:decodeURL("openAPI"), value:decodeURL("https%3A%2F%2Fraw.githubusercontent.com%2Fbrreg%2FopenAPI%2Fmaster%2Fspecs%2Ffdk.yaml")});
+
+										dataElements.push({id:"bfa6343c-a074-46d1-a9dd-dbd32c30c48d", type:"ApplicationInterface", name:decodeURL("search+GUI"), description:decodeURL("")});
+													dataProperties.push({id:"bfa6343c-a074-46d1-a9dd-dbd32c30c48d", key:decodeURL("url"), value:decodeURL("https%3A%2F%2Ffellesdatakatalog.brreg.no")});
+
+										dataElements.push({id:"6676af9e-dc36-4edb-b38b-53d1f1761a37", type:"ApplicationComponent", name:decodeURL("search"), description:decodeURL("")});
+										dataElements.push({id:"66b88164-4861-42be-a601-29ef99af7f0c", type:"ApplicationComponent", name:decodeURL("reference-data"), description:decodeURL("")});
+										dataElements.push({id:"7823c1fc-91dd-46f1-b20e-0745e03966d2", type:"ApplicationComponent", name:decodeURL("registration-api"), description:decodeURL("")});
+										dataElements.push({id:"fc85792b-d8a8-4872-aba3-8e8d182d7f51", type:"ApplicationComponent", name:decodeURL("registration-auth"), description:decodeURL("")});
+										dataElements.push({id:"89337213-83a8-4036-ac1f-797ed9cbf510", type:"ApplicationComponent", name:decodeURL("registration-react"), description:decodeURL("")});
+										dataElements.push({id:"d8820cf2-1bf3-4ac4-a168-78f3942d276a", type:"ApplicationInterface", name:decodeURL("registration+GUI"), description:decodeURL("")});
+										dataElements.push({id:"ddca48e3-25cc-4582-836c-8af3a8c9a97d", type:"ApplicationInterface", name:decodeURL("registration-api+API"), description:decodeURL("")});
+										dataElements.push({id:"18aad649-3a34-4ab2-b85b-ff5cf37ecac1", type:"ApplicationComponent", name:decodeURL("harvester"), description:decodeURL("")});
+										dataElements.push({id:"3e6bb26e-e816-4f20-98dc-d3030c41704d", type:"ApplicationInterface", name:decodeURL("harvester+GUI"), description:decodeURL("")});
+
+
+										dataElements.push({id:"96328e35-d998-4c7c-8684-7e6ca395097c", type:"Location", name:decodeURL("Virksomhet"), description:decodeURL("")});
+										dataElements.push({id:"0f777e19-5ec1-4477-b493-95c53a70a740", type:"Location", name:decodeURL("Nasjonalt"), description:decodeURL("")});
+										dataElements.push({id:"f0227591-4815-4551-87e4-11eab84f94bd", type:"Grouping", name:decodeURL("S%C3%B8kel%C3%B8sning"), description:decodeURL("")});
+										dataElements.push({id:"0d2e642c-20ca-4fe8-b484-fed37daa019c", type:"Grouping", name:decodeURL("Registreringsl%C3%B8sning"), description:decodeURL("")});
+										dataElements.push({id:"694c8f12-abb5-4a53-b3d6-571df5c1cda3", type:"Grouping", name:decodeURL("Felles"), description:decodeURL("")});
+
+
+										dataRelations.push({id:"9eec6e24-c34e-4650-8835-6c24eb619563", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"f3749090-2fa0-461b-bf84-4943ba2ff334"});
+										dataRelations.push({id:"8b12a587-b2b4-4502-8e9a-621a1bd7d613", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"43aa450e-0394-41e5-bc7c-ca4d3141350e"});
+										dataRelations.push({id:"8c2664c2-8c97-4894-996b-01f9887bb914", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811"});
+										dataRelations.push({id:"b0183041-2a80-45f8-a5d9-982386410016", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"f3749090-2fa0-461b-bf84-4943ba2ff334", target:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811"});
+										dataRelations.push({id:"e9f1ece0-fc48-44de-8c28-a720913e9aea", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"43aa450e-0394-41e5-bc7c-ca4d3141350e", target:"8e0d843f-826f-4f08-be73-da0638bba50e"});
+										dataRelations.push({id:"299e5f55-7bca-43c9-8d0d-43844d3ef97a", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"f2a2ff35-a9cd-4801-b2af-a2de3eb17bf1"});
+										dataRelations.push({id:"28bcf110-8c4d-4074-b903-ef9e74c2fe26", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"f2a2ff35-a9cd-4801-b2af-a2de3eb17bf1", target:"5253b596-e75f-454b-9925-cafa72ea6547"});
+										dataRelations.push({id:"46f8b19f-5969-4ef2-8ae9-11f4ed7ef014", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"53543756-bc48-40d4-91df-37c697878806"});
+										dataRelations.push({id:"3e56f8a5-ff54-4645-8a64-550f2117cd82", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"53543756-bc48-40d4-91df-37c697878806", target:"d9d362b3-1ae1-4179-b02b-f1e039fb7a85"});
+										dataRelations.push({id:"864f824c-42ff-45c8-acd7-e53fa24b566b", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0f777e19-5ec1-4477-b493-95c53a70a740", target:"6676af9e-dc36-4edb-b38b-53d1f1761a37"});
+										dataRelations.push({id:"d46c8e13-22b1-4355-8bb0-6a3ce2bca8b6", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"6676af9e-dc36-4edb-b38b-53d1f1761a37", target:"bfa6343c-a074-46d1-a9dd-dbd32c30c48d"});
+										dataRelations.push({id:"c2ba48ac-0f8a-462c-88e1-97e2ba454169", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"d9d362b3-1ae1-4179-b02b-f1e039fb7a85", target:"6676af9e-dc36-4edb-b38b-53d1f1761a37"});
+										dataRelations.push({id:"989b9a1c-7ade-4530-a15f-268dfea82b8a", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"89337213-83a8-4036-ac1f-797ed9cbf510", target:"d8820cf2-1bf3-4ac4-a168-78f3942d276a"});
+										dataRelations.push({id:"1c90aa62-f72d-4673-9f32-4d2bd3a4c46c", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"fc85792b-d8a8-4872-aba3-8e8d182d7f51", target:"ddca48e3-25cc-4582-836c-8af3a8c9a97d"});
+										dataRelations.push({id:"274cac55-9f06-4483-9293-1941efa38c9b", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"7823c1fc-91dd-46f1-b20e-0745e03966d2", target:"ddca48e3-25cc-4582-836c-8af3a8c9a97d"});
+										dataRelations.push({id:"414b02ae-2f94-4310-857a-98cbffd91fc7", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"ddca48e3-25cc-4582-836c-8af3a8c9a97d", target:"89337213-83a8-4036-ac1f-797ed9cbf510"});
+										dataRelations.push({id:"2246dfef-fed0-435e-b8af-e0b220357cf4", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811", target:"6676af9e-dc36-4edb-b38b-53d1f1761a37"});
+										dataRelations.push({id:"a0d4398c-cb5f-43d2-858d-b68d246f0dc7", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"8e0d843f-826f-4f08-be73-da0638bba50e", target:"6676af9e-dc36-4edb-b38b-53d1f1761a37"});
+										dataRelations.push({id:"19929f04-ebcb-44e4-a182-566ccaed02bb", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"bfa6343c-a074-46d1-a9dd-dbd32c30c48d"});
+										dataRelations.push({id:"bfd557f3-896f-4925-9145-5c236235dd3b", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"6676af9e-dc36-4edb-b38b-53d1f1761a37"});
+										dataRelations.push({id:"98693f1a-baf6-49de-ac0e-a7e4e0ec5604", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"d9d362b3-1ae1-4179-b02b-f1e039fb7a85"});
+										dataRelations.push({id:"7924877b-a830-45a4-8b0d-2f63f05c8682", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"53543756-bc48-40d4-91df-37c697878806"});
+										dataRelations.push({id:"54eced99-c1d2-490d-9666-fddc8f3bfa07", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"f3749090-2fa0-461b-bf84-4943ba2ff334"});
+										dataRelations.push({id:"f69df663-fe0b-4776-9e73-e341a3f5d568", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"36432d8b-2d0e-4dc9-98d7-a5eb32bc0811"});
+										dataRelations.push({id:"ecce0faa-3148-4879-bf20-d65d6bb48f57", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"8e0d843f-826f-4f08-be73-da0638bba50e"});
+										dataRelations.push({id:"550f05e5-71d8-4522-9e10-b3c05e642659", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"43aa450e-0394-41e5-bc7c-ca4d3141350e"});
+										dataRelations.push({id:"dd621ce1-5ca4-4acc-adc9-e32b9b8f76db", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"f2a2ff35-a9cd-4801-b2af-a2de3eb17bf1"});
+										dataRelations.push({id:"98d95e5b-db32-46be-b207-ea3cb500a173", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"5253b596-e75f-454b-9925-cafa72ea6547"});
+										dataRelations.push({id:"ba8c9237-c21c-46bf-ba8c-a22e044b8ea5", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0d2e642c-20ca-4fe8-b484-fed37daa019c", target:"d8820cf2-1bf3-4ac4-a168-78f3942d276a"});
+										dataRelations.push({id:"f5b0d839-feb5-422a-b47e-d31b97946b90", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0d2e642c-20ca-4fe8-b484-fed37daa019c", target:"89337213-83a8-4036-ac1f-797ed9cbf510"});
+										dataRelations.push({id:"353c4e84-d653-4c97-8d97-cdabb62b4bf7", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0d2e642c-20ca-4fe8-b484-fed37daa019c", target:"ddca48e3-25cc-4582-836c-8af3a8c9a97d"});
+										dataRelations.push({id:"ac38bc37-a81d-4c02-91e1-8823339f0ba6", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0d2e642c-20ca-4fe8-b484-fed37daa019c", target:"7823c1fc-91dd-46f1-b20e-0745e03966d2"});
+										dataRelations.push({id:"9b5d1eb6-4ba0-490c-b1ca-9222b53ffff5", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"0d2e642c-20ca-4fe8-b484-fed37daa019c", target:"fc85792b-d8a8-4872-aba3-8e8d182d7f51"});
+										dataRelations.push({id:"ed0c6d8e-ebaf-450f-9f6e-a9d9e867976b", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"18aad649-3a34-4ab2-b85b-ff5cf37ecac1"});
+										dataRelations.push({id:"b7066234-1e98-4cd7-a6a8-1df0fe6ae78e", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"5253b596-e75f-454b-9925-cafa72ea6547", target:"18aad649-3a34-4ab2-b85b-ff5cf37ecac1"});
+										dataRelations.push({id:"3707114e-09a0-43da-8b0d-5067a36593de", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"f0227591-4815-4551-87e4-11eab84f94bd", target:"3e6bb26e-e816-4f20-98dc-d3030c41704d"});
+										dataRelations.push({id:"0bed5e04-1146-409b-a730-956f5b36bbf3", type:"RealizationRelationship", name:decodeURL(""), description:decodeURL(""), source:"18aad649-3a34-4ab2-b85b-ff5cf37ecac1", target:"3e6bb26e-e816-4f20-98dc-d3030c41704d"});
+										dataRelations.push({id:"51c8108c-cab7-4d12-93be-0989c4749a8c", type:"CompositionRelationship", name:decodeURL(""), description:decodeURL(""), source:"694c8f12-abb5-4a53-b3d6-571df5c1cda3", target:"66b88164-4861-42be-a601-29ef99af7f0c"});
+										dataRelations.push({id:"e355b669-d478-40cf-a18c-20b024955b08", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"66b88164-4861-42be-a601-29ef99af7f0c", target:"f2a2ff35-a9cd-4801-b2af-a2de3eb17bf1"});
+										dataRelations.push({id:"e4593393-51a3-443a-ae40-03e38d26c7b5", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"66b88164-4861-42be-a601-29ef99af7f0c", target:"53543756-bc48-40d4-91df-37c697878806"});
+										dataRelations.push({id:"7e5908db-fe14-45bf-9d27-33ab25e48a48", type:"ServingRelationship", name:decodeURL(""), description:decodeURL(""), source:"66b88164-4861-42be-a601-29ef99af7f0c", target:"7823c1fc-91dd-46f1-b20e-0745e03966d2"});
+
+
+										dataElements.push({id:"0a0773b1-e37f-4b78-960e-d1c7e1830bdf", type:"ArchimateDiagramModel", name:decodeURL("Informasjonsforvaltning+Applications+med+grensesnitt+-+N%C3%A5situasjon"), description:decodeURL("")});
+
+
+
+
+
+						    alasql('CREATE TABLE Elements');
+						    alasql('CREATE TABLE Properties');
+						    alasql('CREATE TABLE Relations');
+
+						    alasql.tables.Elements.data = dataElements;
+						    alasql.tables.Properties.data = dataProperties;
+						    alasql.tables.Relations.data = dataRelations;
+						</script> 
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

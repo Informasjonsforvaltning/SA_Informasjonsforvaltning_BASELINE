@@ -1,0 +1,11 @@
+<archimate:ApplicationInterface
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="concept-cat API"
+    id="8e0d843f-826f-4f08-be73-da0638bba50e">
+  <properties
+      key="url"
+      value="https://fellesdatakatalog.brreg.no/api/concepts"/>
+  <properties
+      key="openAPI"
+      value="https://raw.githubusercontent.com/brreg/openAPI/master/specs/begrep-cat.yaml"/>
+</archimate:ApplicationInterface>

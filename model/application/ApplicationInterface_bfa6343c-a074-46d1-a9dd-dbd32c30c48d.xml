@@ -1,0 +1,9 @@
+<archimate:ApplicationInterface
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="search GUI"
+    id="bfa6343c-a074-46d1-a9dd-dbd32c30c48d"
+    documentation="https://">
+  <properties
+      key="url"
+      value="https://fellesdatakatalog.brreg.no"/>
+</archimate:ApplicationInterface>

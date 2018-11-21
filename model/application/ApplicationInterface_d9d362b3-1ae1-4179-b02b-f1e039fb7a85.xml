@@ -1,0 +1,8 @@
+<archimate:ApplicationInterface
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="search-api API"
+    id="d9d362b3-1ae1-4179-b02b-f1e039fb7a85">
+  <properties
+      key="openAPI"
+      value="https://raw.githubusercontent.com/brreg/openAPI/master/specs/fdk.yaml"/>
+</archimate:ApplicationInterface>

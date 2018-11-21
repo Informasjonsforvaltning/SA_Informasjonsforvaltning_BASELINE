@@ -1,0 +1,8 @@
+<archimate:ApplicationInterface
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="api-cat API"
+    id="36432d8b-2d0e-4dc9-98d7-a5eb32bc0811">
+  <properties
+      key="openAPI"
+      value="https://raw.githubusercontent.com/brreg/openAPI/master/specs/api-cat.yaml"/>
+</archimate:ApplicationInterface>
